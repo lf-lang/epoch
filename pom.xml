@@ -50,9 +50,6 @@
             <modules>
                 <module>org.lflang</module>
                 <module>org.lflang.ui</module>
-                <!-- Tests -->
-                <module>org.lflang.tests</module>
-                <module>org.lflang.ui.tests</module>
                 <!-- Eclipse Product -->
                 <module>org.lflang.sdk</module>
                 <module>org.lflang.updatesite</module>

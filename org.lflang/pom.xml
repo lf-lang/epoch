@@ -15,6 +15,9 @@
 
     <name>Lingua Franca Core</name>
 
+    <properties>
+        <lf-sources>${project.basedir}/lingua-franca/org.lflang/src</lf-sources>
+    </properties>
 
     <build>
         <plugins>
@@ -36,9 +39,11 @@
                 <configuration>
                     <mainClass>org.eclipse.emf.mwe2.launch.runtime.Mwe2Launcher</mainClass>
                     <arguments>
-                        <argument>/${project.basedir}/src/org/lflang/GenerateLinguaFranca.mwe2</argument>
+                        <argument>/${project.basedir}/src/org/lflang/GenerateLinguaFrancaEpoch.mwe2</argument>
                         <argument>-p</argument>
                         <argument>rootPath=/${project.basedir}/..</argument>
+                        <argument>-p</argument>
+                        <argument>lfSource=${lf-sources}</argument>
                     </arguments>
                     <classpathScope>compile</classpathScope>
                     <includePluginDependencies>true</includePluginDependencies>
@@ -117,6 +122,19 @@
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
                 <version>${kotlinVersion}</version>
+                <executions>
+                <execution>
+                    <id>compile</id>
+                    <goals>
+                        <goal>compile</goal>
+                    </goals>
+                    <configuration>
+                        <sourceDirs>
+                            <sourceDir>${lf-sources}</sourceDir>
+                        </sourceDirs>
+                    </configuration>
+                </execution>
+            </executions>
             </plugin>
             <plugin>
                 <groupId>org.eclipse.tycho</groupId>
