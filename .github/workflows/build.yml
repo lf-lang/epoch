@@ -16,21 +16,13 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out lingua-franca repository
+      - name: Check out epoch repository
         uses: actions/checkout@v3
         with:
           submodules: recursive
           fetch-depth: 0
       - name: Prepare build environment
         uses: ./.github/actions/prepare-build-env
-      - name: Build and package lf cli tools (nightly build)
-        run: .github/scripts/package-cli.sh nightly
-        shell: bash
-        if: ${{ inputs.nightly == true }}
-      - name: Build and package lf cli tools (regular build)
-        run: .github/scripts/package-cli.sh
-        shell: bash
-        if: ${{ inputs.nightly != true }}
       - name: Check Maven/Java configuration
         run: mvn -version
         shell: bash
@@ -43,9 +35,9 @@ jobs:
           repo_token: "${{ secrets.envPAT }}"
           automatic_release_tag: 'nightly'
           prerelease: true
-          title: "Lingua Franca Nightly"
+          title: "Epoch Nightly"
           files: |
             org.lflang.rca/target/products/*.tar.gz
             org.lflang.rca/target/products/*.zip
-            build_upload/*
+            org.lflang.updatesite/target/*.zip
         if: ${{ inputs.nightly == true }}
