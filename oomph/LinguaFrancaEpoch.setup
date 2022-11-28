@@ -13,8 +13,8 @@
     xmlns:setup.targlets="http://www.eclipse.org/oomph/setup/targlets/1.0"
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/launching/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Launching.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/targlets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
-    name="lingua.franca"
-    label="Lingua Franca">
+    name="lingua.franca.epoch"
+    label="Lingua Franca (Epoch)">
   <setupTask
       xsi:type="jdt:JRETask"
       version="JavaSE-17"
@@ -162,24 +162,19 @@
     <requirement
         name="org.eclipse.xtext.sdk.feature.group"
         versionRange="2.27.0"/>
+    <requirement
+        name="org.eclipse.m2e.feature.feature.group"/>
+    <requirement
+        name="org.eclipse.m2e.pde.feature.feature.group"/>
     <repository
         url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
     <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
   </setupTask>
   <setupTask
-      xsi:type="setup:VariableTask"
-      id="git.clone.lingua.franca.branch"
-      name="git.clone.lingua.franca.branch"
-      defaultValue="master"
-      storageURI="scope://Workspace"
-      label="Lingua Franca Branch (git clone)">
-    <description>The branch to check out at the initial clone of the repository.</description>
-  </setupTask>
-  <setupTask
       xsi:type="git:GitCloneTask"
-      id="git.clone.lingua.franca"
-      remoteURI="lf-lang/lingua-franca"
-      checkoutBranch="${git.clone.lingua.franca.branch}"
+      id="git.clone.epoch"
+      remoteURI="lf-lang/epoch"
+      checkoutBranch="main"
       recursive="true">
     <annotation
         source="http://www.eclipse.org/oomph/setup/InducedChoices">
@@ -204,43 +199,22 @@
     <setupTask
         xsi:type="setup:ResourceCreationTask"
         excludedTriggers="BOOTSTRAP"
-        predecessor="git.clone.lingua.franca"
-        targetURL="${git.clone.lingua.franca.location|uri}/org.lflang/src-gen/.dummy">
+        predecessor="git.clone.epoch"
+        targetURL="${git.clone.epoch.location|uri}/org.lflang/src-gen/.dummy">
       <content></content>
     </setupTask>
     <setupTask
         xsi:type="setup:ResourceCreationTask"
         excludedTriggers="BOOTSTRAP"
-        predecessor="git.clone.lingua.franca"
-        targetURL="${git.clone.lingua.franca.location|uri}/org.lflang.ide/src-gen/.dummy">
+        predecessor="git.clone.epoch"
+        targetURL="${git.clone.epoch.location|uri}/org.lflang.ui/src-gen/.dummy">
       <content></content>
     </setupTask>
     <setupTask
         xsi:type="setup:ResourceCreationTask"
         excludedTriggers="BOOTSTRAP"
-        predecessor="git.clone.lingua.franca"
-        targetURL="${git.clone.lingua.franca.location|uri}/org.lflang.ui/src-gen/.dummy">
-      <content></content>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:ResourceCreationTask"
-        excludedTriggers="BOOTSTRAP"
-        predecessor="git.clone.lingua.franca"
-        targetURL="${git.clone.lingua.franca.location|uri}/org.lflang.web/src-gen/.dummy">
-      <content></content>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:ResourceCreationTask"
-        excludedTriggers="BOOTSTRAP"
-        predecessor="git.clone.lingua.franca"
-        targetURL="${git.clone.lingua.franca.location|uri}/org.lflang.tests/src-gen/.dummy">
-      <content></content>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:ResourceCreationTask"
-        excludedTriggers="BOOTSTRAP"
-        predecessor="git.clone.lingua.franca"
-        targetURL="${git.clone.lingua.franca.location|uri}/org.lflang.ui.tests/src-gen/.dummy">
+        predecessor="git.clone.epoch"
+        targetURL="${git.clone.epoch.location|uri}/org.lflang.ui.tests/src-gen/.dummy">
       <content></content>
     </setupTask>
     <description>The git repository does not contain the required src-gen folders, hence they are created here.</description>
@@ -248,7 +222,7 @@
   <setupTask
       xsi:type="projects:ProjectsImportTask">
     <sourceLocator
-        rootFolder="${git.clone.lingua.franca.location}"/>
+        rootFolder="${git.clone.epoch.location}"/>
   </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
@@ -266,7 +240,14 @@
     <setupTask
         xsi:type="setup:EclipseIniTask"
         option="-Doomph.redirection.lingua.franca"
-        value="=https://raw.githubusercontent.com/lf-lang/lingua-franca/master/oomph/LinguaFranca.setup->${git.clone.lingua.franca.location|uri}/oomph/LinguaFranca.setup"
+        value="=https://raw.githubusercontent.com/lf-lang/lingua-franca/master/oomph/LinguaFranca.setup->${git.clone.epoch.location|uri}/oomph/LinguaFrancaEpoch.setup"
+        vm="true">
+      <description>Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.</description>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:EclipseIniTask"
+        option="-Doomph.redirection.lingua.franca.epoch"
+        value="=https://raw.githubusercontent.com/lf-lang/epoch/main/oomph/LinguaFrancaEpoch.setup->${git.clone.epoch.location|uri}/oomph/LinguaFrancaEpoch.setup"
         vm="true">
       <description>Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.</description>
     </setupTask>
@@ -368,88 +349,6 @@
               url="https://rtsys.informatik.uni-kiel.de/~kieler/updatesite/sprotty/0.9.0/"/>
           <repository
               url="https://lf-lang.github.io/epoch-external-dependencies/"/>
-        </repositoryList>
-      </targlet>
-    </setupTask>
-    <setupTask
-        xsi:type="projects:ProjectsBuildTask"
-        onlyNewProjects="true"/>
-    <setupTask
-        xsi:type="launching:LaunchTask"
-        launcher="Generate LinguaFranca (lf) Language Infrastructure">
-      <description>Build Xtext grammar</description>
-    </setupTask>
-  </stream>
-  <stream name="no-diagrams"
-      label="No Diagrams">
-    <setupTask
-        xsi:type="setup:EclipseIniTask"
-        option="-Doomph.redirection.lingua.franca"
-        value="=https://raw.githubusercontent.com/lf-lang/lingua-franca/master/oomph/LinguaFranca.setup->${git.clone.lingua.franca.location|uri}/oomph/LinguaFranca.setup"
-        vm="true">
-      <description>Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.</description>
-    </setupTask>
-    <setupTask
-        xsi:type="setup.targlets:TargletTask"
-        targetName="NoDiagrams">
-      <targlet
-          name="${scope.project.label}"
-          activeRepositoryList="DefaultRepositories"
-          includeSources="false">
-        <annotation
-            source="http:/www.eclipse.org/oomph/targlets/TargetDefinitionGenerator_DISABLED">
-          <detail
-              key="preferredRepositories">
-            <value>http://download.eclipse.org/eclipse/updates/</value>
-          </detail>
-          <detail
-              key="includeAllPlatforms">
-            <value>false</value>
-          </detail>
-          <detail
-              key="includeSource">
-            <value>false</value>
-          </detail>
-          <detail
-              key="location">
-            <value>${git.clone.lingua.franca.location}/targetplatform/lingua-franca.target</value>
-          </detail>
-        </annotation>
-        <requirement
-            name="org.eclipse.sdk.feature.group"/>
-        <requirement
-            name="org.eclipse.rcp.feature.group"/>
-        <requirement
-            name="org.eclipse.equinox.executable.feature.group"/>
-        <requirement
-            name="org.eclipse.epp.mpc.feature.group"/>
-        <requirement
-            name="org.eclipse.egit.feature.group"/>
-        <requirement
-            name="org.eclipse.jdt.feature.group"/>
-        <requirement
-            name="org.eclipse.cdt.feature.group"/>
-        <requirement
-            name="com.google.inject"/>
-        <requirement
-            name="com.google.guava"
-            versionRange="27.0.0"/>
-        <requirement
-            name="org.eclipse.xtext.runtime.feature.group"
-            versionRange="2.25.0"/>
-        <requirement
-            name="org.eclipse.xtext.sdk.feature.group"
-            versionRange="2.25.0"/>
-        <requirement
-            name="org.eclipse.emf.mwe2.launcher.feature.group"/>
-        <repositoryList
-            name="DefaultRepositories">
-          <repository
-              url="http://download.eclipse.org/releases/2021-03"/>
-          <repository
-              url="http://download.eclipse.org/tools/orbit/downloads/drops/R20201130205003/repository/"/>
-          <repository
-              url="https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.25.0/"/>
         </repositoryList>
       </targlet>
     </setupTask>
