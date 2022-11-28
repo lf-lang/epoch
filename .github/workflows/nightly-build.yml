@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    uses: lf-lang/lingua-franca/.github/workflows/build.yml@master
+    uses: lf-lang/epoch/.github/workflows/build.yml@main
     with:
       nightly: true
     secrets:

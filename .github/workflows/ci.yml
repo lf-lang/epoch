@@ -14,14 +14,14 @@ on:
 jobs:
   # Cancel previous workflow runs.
   cancel:
-    uses: lf-lang/lingua-franca/.github/workflows/cancel.yml@master
+    uses: lf-lang/epoch/.github/workflows/cancel.yml@main
 
   # Run the Maven build.
   build:
-    uses: lf-lang/lingua-franca/.github/workflows/build.yml@master
+    uses: lf-lang/epoch/.github/workflows/build.yml@main
     needs: cancel
 
   # Run tests for Eclipse.
   eclipse-tests:
-    uses: lf-lang/lingua-franca/.github/workflows/eclipse-tests.yml@master
+    uses: lf-lang/epoch/.github/workflows/eclipse-tests.yml@main
     needs: cancel
