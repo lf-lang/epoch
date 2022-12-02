@@ -33,7 +33,7 @@ Workflow {
                     enabled = true
                 }
                 eclipsePluginTest = {
-                    enabled = false
+                    enabled = true
                 }
             }
             code = {

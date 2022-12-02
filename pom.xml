@@ -58,7 +58,20 @@
                 <module>org.lflang.targetplatform</module>
             </modules>
         </profile>
+
+        <profile>
+            <id>test</id>
+
+            <modules>
+                <module>org.lflang</module>
+                <module>org.lflang.ui</module>
+                <!-- Test -->
+                <module>org.lflang.ui.tests</module>
+                <module>org.lflang.targetplatform</module>
+            </modules>
+        </profile>
     </profiles>
+
     <pluginRepositories>
         <pluginRepository>
             <id>tycho-staged</id>

@@ -27,7 +27,7 @@ import org.eclipse.xtext.ui.wizard.template.StringSelectionTemplateVariable;
  * Upon adding a new template, manually add entries to messages.properties and
  * Messages.java in order to get the template registered properly in the wizard.
  */
-class LFProjectTemplateProvider implements IProjectTemplateProvider {
+public class LFProjectTemplateProvider implements IProjectTemplateProvider {
     @Override
     public AbstractProjectTemplate[] getProjectTemplates() {
         return new AbstractProjectTemplate[] { new DefaultProject(),
