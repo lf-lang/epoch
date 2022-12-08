@@ -43,6 +43,10 @@ Workflow {
                 preferXtendStubs = false
             }
         }
+        /*
+         * IMPORTANT: Any changes to this configuration must be synchronized with 
+         * the GenerateLinguaFranca.mwe2 file in the LF repository!
+         */
         language = StandardLanguage {
             name = "org.lflang.LinguaFranca"
             fileExtensions = "lf"
