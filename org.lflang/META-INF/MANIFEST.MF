@@ -6,6 +6,7 @@ Bundle-Vendor: University of California, Berkeley
 Bundle-Version: 0.3.1.qualifier
 Bundle-SymbolicName: org.lflang; singleton:=true
 Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.lflang.LFPluginActivator
 Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.xbase,
  org.eclipse.equinox.common;bundle-version="3.5.0",
