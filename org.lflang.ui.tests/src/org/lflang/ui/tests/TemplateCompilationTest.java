@@ -28,6 +28,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assume.assumeTrue;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,6 +36,7 @@ import java.util.HashMap;
 
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.xtext.builder.EclipseResourceFileSystemAccess2;
 import org.eclipse.xtext.generator.GeneratorContext;
@@ -100,6 +102,10 @@ public class TemplateCompilationTest {
     
     @Test
     public void compileTemplate() throws CoreException, IOException {
+        // Compiler restrictions
+        assumeTrue("Federated LF programs with a C target are currently not supported on Windows", 
+                Platform.getOS() != Platform.OS_WIN32 || !template.toLowerCase().contains("federated"));
+        
         // Locate file
         var bundle = FrameworkUtil.getBundle(LFProjectTemplateProvider.class);
         assertNotNull(bundle);
