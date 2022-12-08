@@ -106,9 +106,9 @@ public class TemplateCompilationTest {
         assertNotNull(srcURL);
         
         // Names
+        var projectName = template.replaceAll("/", "-");
         var filePath = new File(template);
         var fileName = filePath.getName();
-        var projectName = filePath.toString().replaceAll("/|\\.", "-");
         
         // Create test file
         var root = ResourcesPlugin.getWorkspace().getRoot();
