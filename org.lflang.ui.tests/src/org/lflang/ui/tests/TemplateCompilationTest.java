@@ -103,9 +103,8 @@ public class TemplateCompilationTest {
     @Test
     public void compileTemplate() throws CoreException, IOException {
         // Compiler restrictions
-        System.out.println(Platform.getOS() + " " + Platform.OS_WIN32 + " " + (Platform.getOS() != Platform.OS_WIN32) +" "+ template.toLowerCase() + " " + (!template.toLowerCase().contains("federated")));
         assumeTrue("Federated LF programs with a C target are currently not supported on Windows", 
-                Platform.getOS() != Platform.OS_WIN32 || !template.toLowerCase().contains("federated"));
+                !Platform.getOS().equals(Platform.OS_WIN32) || !template.toLowerCase().contains("federated"));
         
         // Locate file
         var bundle = FrameworkUtil.getBundle(LFProjectTemplateProvider.class);
