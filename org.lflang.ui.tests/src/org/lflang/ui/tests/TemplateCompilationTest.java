@@ -1,5 +1,5 @@
 /*************
-* Copyright (c) 2020, Kiel University.
+* Copyright (c) 2022, Kiel University.
 *
 * Redistribution and use in source and binary forms, with or without modification,
 * are permitted provided that the following conditions are met:
@@ -50,6 +50,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
+import org.lflang.generator.MainContext;
 import org.lflang.ui.wizard.LFProjectTemplateProvider;
 import org.osgi.framework.FrameworkUtil;
 
@@ -59,7 +60,7 @@ import com.google.inject.Injector;
 /**
  * Tests if all LF file in templates (org.lflang.ui) can be compiled.
  * 
- * @author{Alexander Schulz-Rosengarten <als@informatik.uni-kiel.de>}
+ * @author Alexander Schulz-Rosengarten
  */
 @RunWith(Parameterized.class)
 public class TemplateCompilationTest {
@@ -92,6 +93,9 @@ public class TemplateCompilationTest {
         this.template = template;
         this.injector = new LFUiInjectorProvider().getInjector();
         this.injector.injectMembers(this);
+        
+        // Configure LF code generator to use special error reporter
+        MainContext.EPOCH_ERROR_REPORTER_CONSTRUCTOR = TestErrorReporter::new;
     }
     
     @Test
@@ -151,9 +155,6 @@ public class TemplateCompilationTest {
 
         // Start code generation and compilation
         generator.generate(resource, fsa, generatorContext);
-        assertEquals("Compilation errors.", 0, resource.getErrors().size());
-        
-        // TODO detect build errors!!!
     }
 
 }
