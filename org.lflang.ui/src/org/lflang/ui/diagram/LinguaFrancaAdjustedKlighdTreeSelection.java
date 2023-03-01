@@ -27,7 +27,7 @@ import com.google.common.collect.Iterators;
 import de.cau.cs.kieler.klighd.KlighdTreeSelection;
 
 /**
- * @author als
+ * @author Alexander Schulz-Rosengarten
  */
 public class LinguaFrancaAdjustedKlighdTreeSelection extends KlighdTreeSelection {
     
