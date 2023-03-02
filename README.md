@@ -9,7 +9,7 @@ You can download the latest release of Epoch from the Lingua Franca Release page
  - [Epoch for aarch64 macOS](https://github.com/lf-lang/lingua-franca/releases/download/v0.4.0/epoch_ide_0.4.0-macosx.cocoa.x86_64.tar.gz)
  - [Epoch for Windows](https://github.com/lf-lang/lingua-franca/releases/download/v0.4.0/epoch_ide_0.4.0-win32.win32.x86_64.zip)
  
-No installation is needed, but Java >= 17 is required.
+Simply extract the contents from the archive and run the `epoch` executable. Please note that Java >= 17 is required to run Epoch.
 
 ## Developer Setup
 To work on the Epoch codebase in Eclipse, consult our wiki for [step-by-step setup instructions](https://github.com/lf-lang/epoch/wiki/Developer-Eclipse-Setup-with-Oomph).
