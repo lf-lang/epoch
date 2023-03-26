@@ -12,4 +12,22 @@ You can download the latest release of Epoch from the Lingua Franca Release page
 Simply extract the contents from the archive and run the `epoch` executable. Please note that Java >= 17 is required to run Epoch.
 
 ## Developer Setup
+
+### Develop Using Maven
+
+Clone this repo:
+
+```
+git clone git@github.com:lf-lang/epoch.git
+```
+
+Build Epoch:
+
+```
+mvn clean package
+```
+
+### Develop Using Eclipse
+
 To work on the Epoch codebase in Eclipse, consult our wiki for [step-by-step setup instructions](https://github.com/lf-lang/epoch/wiki/Developer-Eclipse-Setup-with-Oomph).
+
