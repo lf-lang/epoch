@@ -19,6 +19,8 @@ Clone this repo:
 
 ```
 git clone git@github.com:lf-lang/epoch.git
+cd epoch
+git submodule update --init --recursive
 ```
 
 Build Epoch:
