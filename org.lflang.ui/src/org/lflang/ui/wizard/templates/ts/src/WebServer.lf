@@ -1,14 +1,15 @@
 target TypeScript {
-    keepalive : true
-};
+    keepalive: true
+}
 
 main reactor {
-    preamble {=
-        import * as http from "http"
+    preamble {= import * as http from "http" =}
+    state server: {= http.Server | undefined =} = {= undefined =}
+    physical action serverRequest: {=
+        [http.IncomingMessage, http.ServerResponse]
     =}
-    state server:{=http.Server | undefined=}({=undefined=});
-    physical action serverRequest:{= [http.IncomingMessage, http.ServerResponse] =};
-    reaction (startup) -> serverRequest {=
+
+    reaction(startup) -> serverRequest {=
         let options = {};
         server = http.createServer(options, (req : http.IncomingMessage, res : http.ServerResponse) => {
             // Generally, browsers make two requests; the first is for favicon.ico.
@@ -19,7 +20,8 @@ main reactor {
         }).listen(8000);
         console.log("Started web server at http://localhost:8000/")
     =}
-    reaction (serverRequest) {=
+
+    reaction(serverRequest) {=
         let requestArray = serverRequest;
         if (requestArray) {
             let req = requestArray[0];
@@ -28,9 +30,10 @@ main reactor {
             res.end("Hello world!\n");
         }
     =}
-    reaction (shutdown) {=
+
+    reaction(shutdown) {=
         if (server) {
             server.close();
         }
-    =} 
+    =}
 }
