@@ -26,7 +26,7 @@ git submodule update --init --recursive
 Build Epoch:
 
 ```
-mvn clean package
+mvn -U clean package
 ```
 
 ### Develop Using Eclipse
