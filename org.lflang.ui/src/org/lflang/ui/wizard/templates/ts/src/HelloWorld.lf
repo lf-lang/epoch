@@ -1,10 +1,6 @@
 target TypeScript
 
-/**
- * Print "Hello World!" in TypeScript.
- */
+/** Print "Hello World!" in TypeScript. */
 main reactor {
-    reaction(startup) {=
-        console.log("Hello World!")
-    =}
+    reaction(startup) {= console.log("Hello World!") =}
 }

@@ -17,6 +17,7 @@
 
     <properties>
         <lf-sources>${project.basedir}/lingua-franca/org.lflang/src</lf-sources>
+        <exclude-lf-source-cli>**/org/lflang/cli/**.*</exclude-lf-source-cli>
     </properties>
 
     <build>
@@ -139,6 +140,11 @@
             <plugin>
                 <groupId>org.eclipse.tycho</groupId>
                 <artifactId>tycho-compiler-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>${exclude-lf-source-cli}</exclude>
+                    </excludes>
+                </configuration>
             </plugin>
 
             <plugin>
