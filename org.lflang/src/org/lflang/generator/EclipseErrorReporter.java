@@ -74,12 +74,7 @@ public class EclipseErrorReporter implements ErrorReporter {
         if (obj != null) {
              final EObjectDiagnosticImpl diagnostic = new EObjectDiagnosticImpl(severity, null, message, obj, null, -1, null);
              final int line = diagnostic.getLine();
-             Path file = null;
-             try {
-                 file = FileUtil.toPath(diagnostic.getUriToProblem());
-             } catch (IOException e) {
-                // just continue with null
-             }
+             Path file = FileUtil.toPath(diagnostic.getUriToProblem());
              return report(message, severity, line, file);
         }
         
