@@ -16,8 +16,8 @@
     <name>Lingua Franca Core</name>
 
     <properties>
-        <lf-sources>${project.basedir}/lingua-franca/org.lflang/src</lf-sources>
-        <exclude-lf-source-cli>**/org/lflang/cli/**.*</exclude-lf-source-cli>
+        <lf-java-sources>${project.basedir}/lingua-franca/core/src/main/java</lf-java-sources>
+        <lf-kotlin-sources>${project.basedir}/lingua-franca/core/src/main/kotlin</lf-kotlin-sources>
     </properties>
 
     <build>
@@ -44,7 +44,7 @@
                         <argument>-p</argument>
                         <argument>rootPath=/${project.basedir}/..</argument>
                         <argument>-p</argument>
-                        <argument>lfSource=${lf-sources}</argument>
+                        <argument>lfSource=${lf-java-sources}</argument>
                     </arguments>
                     <classpathScope>compile</classpathScope>
                     <includePluginDependencies>true</includePluginDependencies>
@@ -131,7 +131,7 @@
                     </goals>
                     <configuration>
                         <sourceDirs>
-                            <sourceDir>${lf-sources}</sourceDir>
+                            <sourceDir>${lf-kotlin-sources}</sourceDir>
                         </sourceDirs>
                     </configuration>
                 </execution>
@@ -141,9 +141,6 @@
                 <groupId>org.eclipse.tycho</groupId>
                 <artifactId>tycho-compiler-plugin</artifactId>
                 <configuration>
-                    <excludes>
-                        <exclude>${exclude-lf-source-cli}</exclude>
-                    </excludes>
                 </configuration>
             </plugin>
 
