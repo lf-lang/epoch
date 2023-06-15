@@ -103,33 +103,6 @@
                     </configuration>
                 </plugin>
 
-
-                <!-- xtend-maven-plugin is in pluginManagement instead of in plugins
-                     so that it doesn't run before the exec-maven-plugin's *.mwe2 gen; this way
-                     we can list it after. -->
-
-                <plugin>
-                    <groupId>org.jetbrains.kotlin</groupId>
-                    <artifactId>kotlin-maven-plugin</artifactId>
-                    <version>${kotlinVersion}</version>
-                    <executions>
-                        <execution>
-                            <id>kotlin-compile</id>
-                            <phase>process-sources</phase>
-                            <goals>
-                                <goal>compile</goal>
-                            </goals>
-                            <configuration>
-                                <srcDirs>
-                                    <sourceDir>${project.basedir}/src</sourceDir>
-                                    <sourceDir>${project.basedir}/src-gen</sourceDir>
-                                    <sourceDir>${project.basedir}/xtend-gen</sourceDir>
-                                </srcDirs>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-
                 <plugin>
                     <groupId>org.eclipse.tycho</groupId>
                     <artifactId>tycho-compiler-plugin</artifactId>
@@ -150,27 +123,6 @@
                         <release>17</release>
                     </configuration>
                 </plugin> -->
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-clean-plugin</artifactId>
-                    <version>2.5</version>
-                    <executions>
-                        <execution>
-                            <id>gen-clean</id>
-                            <goals>
-                                <goal>clean</goal>
-                            </goals>
-                            <configuration>
-                                <filesets>
-                                    <fileset>
-                                        <directory>${basedir}/xtend-gen</directory>
-                                    </fileset>
-                                </filesets>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
