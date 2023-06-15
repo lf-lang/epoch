@@ -132,6 +132,7 @@
                         </goals>
                         <configuration>
                             <sourceDirs>
+                                <sourceDir>${project.basedir}/src-gen</sourceDir>
                                 <sourceDir>${lf-java-sources}</sourceDir>
                                 <sourceDir>${lf-kotlin-sources}</sourceDir>
                             </sourceDirs>
