@@ -39,38 +39,50 @@ import org.lflang.FileConfig;
  */
 public class TestErrorReporter extends DefaultErrorReporter {
 
+    // Central error detection because compilation will run in separate thread
+    private static String ERROR = null;
+  
+    public static void consumeError() {
+        if (ERROR != null) {
+            String consumedError = ERROR;
+            // Prepare for next test run
+            ERROR = null;
+            assertEquals("Error occured during code generation!", "", consumedError);
+        }
+    }
+  
     public TestErrorReporter(FileConfig fc) {
     }
     public TestErrorReporter() {
     }
-    
+  
     /**
      * {@inheritDoc}
      */
     @Override
     public String reportError(String message) {
         var s = super.reportError(message);
-        assertEquals("Error occured during code generation!", "", message);
+        ERROR = message;
         return s;
     }
-
+  
     /**
      * {@inheritDoc}
      */
     @Override
     public String reportError(EObject object, String message) {
         var s = super.reportError(object, message);
-        assertEquals("Error occured during code generation!", "", message);
+        ERROR = message;
         return s;
     }
-
+  
     /**
      * {@inheritDoc}
      */
     @Override
     public String reportError(Path file, Integer line, String message) {
         var s = super.reportError(file, line, message);
-        assertEquals("Error occured during code generation!", "", message);
+        ERROR = message;
         return s;
     }
 
