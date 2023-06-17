@@ -5,7 +5,7 @@ import org.eclipse.xtext.xtext.generator.model.project.*
 
 var rootPath = ".."
 var coreProject = "org.lflang"
-var lfSource = "lingua-franca/org.lflang/src"
+var lfSource = "lingua-franca/core/src/main/java"
 
 Workflow {
     component = XtextGenerator {

@@ -161,6 +161,7 @@ public class TemplateCompilationTest {
 
         // Start code generation and compilation
         generator.generate(resource, fsa, generatorContext);
+        TestErrorReporter.consumeError();
     }
 
 }

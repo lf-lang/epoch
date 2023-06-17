@@ -9,6 +9,9 @@ target C {
     timeout: 2 sec,
     workers: 1  // Change to 4 to see speed up.
 }
+preamble {=
+    #include <time.h>
+=}
 
 reactor Source {
     timer t(0, 200 msec)
