@@ -37,9 +37,8 @@ def main(args):
     import configparser
     config = configparser.RawConfigParser()
     config.optionxform = str
-    config.read(join(parentDir, 'gradle.properties'))
+    config.read(join(parentDir, 'org.lflang/lingua-franca/gradle.properties'))
     props =  dict(config.items('versions')).keys()
-
     if args["prop"]:
         prop = args["prop"]
         if prop not in props:
