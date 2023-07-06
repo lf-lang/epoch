@@ -29,15 +29,17 @@ import static org.junit.Assert.assertEquals;
 import java.nio.file.Path;
 
 import org.eclipse.emf.ecore.EObject;
-import org.lflang.DefaultErrorReporter;
+import org.eclipse.lsp4j.DiagnosticSeverity;
+import org.lflang.DefaultMessageReporter;
 import org.lflang.FileConfig;
+import org.lflang.generator.Range;
 
 /**
  * Error reporter that asserts the absence of errors.
  * 
  * @author Alexander Schulz-Rosengarten
  */
-public class TestErrorReporter extends DefaultErrorReporter {
+public class TestErrorReporter extends DefaultMessageReporter {
 
     // Central error detection because compilation will run in separate thread
     private static String ERROR = null;
@@ -50,7 +52,7 @@ public class TestErrorReporter extends DefaultErrorReporter {
             assertEquals("Error occured during code generation!", "", consumedError);
         }
     }
-  
+    
     public TestErrorReporter(FileConfig fc) {
     }
     public TestErrorReporter() {
@@ -60,30 +62,33 @@ public class TestErrorReporter extends DefaultErrorReporter {
      * {@inheritDoc}
      */
     @Override
-    public String reportError(String message) {
-        var s = super.reportError(message);
-        ERROR = message;
-        return s;
+    protected void report(Path path, Range range, DiagnosticSeverity severity, String message) {
+        super.report(path, range, severity, message);
+        if (severity == DiagnosticSeverity.Error) {
+            ERROR = message;
+        }
     }
   
     /**
      * {@inheritDoc}
      */
     @Override
-    public String reportError(EObject object, String message) {
-        var s = super.reportError(object, message);
-        ERROR = message;
-        return s;
+    protected void reportOnNode(EObject node, DiagnosticSeverity severity, String message) {
+        super.reportOnNode(node, severity, message);
+        if (severity == DiagnosticSeverity.Error) {
+            ERROR = message;
+        }
     }
-  
+    
     /**
      * {@inheritDoc}
      */
     @Override
-    public String reportError(Path file, Integer line, String message) {
-        var s = super.reportError(file, line, message);
-        ERROR = message;
-        return s;
-    }
+    protected void reportWithoutPosition(DiagnosticSeverity severity, String message) {
+        super.reportWithoutPosition(severity, message);
+        if (severity == DiagnosticSeverity.Error) {
+          ERROR = message;
+      }
+    } 
 
 }

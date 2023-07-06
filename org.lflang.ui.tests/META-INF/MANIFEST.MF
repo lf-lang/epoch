@@ -16,5 +16,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.xtext.builder,
  org.lflang,
  org.lflang.ui,
- org.junit
+ org.junit,
+ org.eclipse.lsp4j
 Automatic-Module-Name: org.lflang.ui.tests
