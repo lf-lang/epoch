@@ -22,7 +22,7 @@ import org.eclipse.xtext.generator.IShouldGenerate;
 import org.eclipse.xtext.util.CancelIndicator;
 import org.eclipse.xtext.workspace.IProjectConfig;
 import org.eclipse.xtext.workspace.ProjectConfigAdapter;
-import org.lflang.generator.EclipseErrorReporter;
+import org.lflang.generator.EclipseMessageReporter;
 
 import com.google.inject.Singleton;
 
@@ -57,7 +57,7 @@ public class EclipseBasedShouldGenerateLF implements IShouldGenerate {
                         for (IMarker marker : member.findMarkers(null, true, IResource.DEPTH_INFINITE)) {
                             // Only consider markers not created by LF code generation
                             if (marker.getAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO) == IMarker.SEVERITY_ERROR 
-                                    && !marker.getAttribute(EclipseErrorReporter.class.getName(), false)) {
+                                    && !marker.getAttribute(EclipseMessageReporter.class.getName(), false)) {
                                 return false; // There is an error that is not reported by a previous compile run, hence, do not build. 
                             }
                         }
