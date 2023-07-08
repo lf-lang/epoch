@@ -27,7 +27,7 @@
         <mwe2LaunchVersion>2.14.0</mwe2LaunchVersion> <!-- This plugin is provided by Eclipse, not Xtext -->
 
         <!-- Tycho version used by Maven (Eclipse specific build support)-->
-        <tychoVersion>2.6.0</tychoVersion>
+        <tychoVersion>2.7.3</tychoVersion>
 
         <!-- Maven only properties -->
         <maven.compiler.source>17</maven.compiler.source>
