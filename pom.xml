@@ -22,12 +22,13 @@
 
         <!-- Eclipse specific components -->
         <!-- Important: Any version specified for these plugins must be available via the update sites listed in the target platform definition. If not, the Epoch build will fail! You can find the target platform definition in org.lflang.targetplatform/org.lflang.targetplatform.target. Changes to the target platform should also be transferred to the oomph setup (oomph/LinguaFranca.setup). -->
-        <xtextVersion>2.27.0</xtextVersion>
-        <lsp4jVersion>0.14.0</lsp4jVersion> <!-- This plugin is provided by Xtext -->
-        <mwe2LaunchVersion>2.13.0</mwe2LaunchVersion> <!-- This plugin is provided by Eclipse, not Xtext -->
+        <xtextVersion>2.31.0</xtextVersion>
+        <lsp4jVersion>0.21.0</lsp4jVersion> <!-- This plugin is provided by Xtext -->
+        <mwe2LaunchVersion>2.14.0</mwe2LaunchVersion> <!-- This plugin is provided by Eclipse, not Xtext -->
 
         <!-- Tycho version used by Maven (Eclipse specific build support)-->
-        <tychoVersion>2.6.0</tychoVersion>
+        <tychoVersion>2.7.5</tychoVersion>
+        <tycho.disableP2Mirrors>true</tycho.disableP2Mirrors>
 
         <!-- Maven only properties -->
         <maven.compiler.source>17</maven.compiler.source>
@@ -72,12 +73,82 @@
         </profile>
     </profiles>
 
+
+    <repositories>
+        <repository>
+            <id>codehaus-snapshots</id>
+            <name>disable dead 'Codehaus Snapshots' repository, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=481478</name>
+            <url>http://nexus.codehaus.org/snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <!-- This must be disabled explicitly, otherwise it is enabled by https://github.com/mojohaus/mojo-parent 
+            which is taken from exec-maven-plugin from at least version 1.6.0 -->
+        <repository>
+            <id>ossrh-snapshots</id>
+            <name>ossrh-snapshots</name>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+        </repository>
+        <!-- This is enabled by /org/sonatype/oss/oss-parent/7 used as parent by 
+            org/xtext/antlr-generator/3.2.1 -->
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
     <pluginRepositories>
         <pluginRepository>
-            <id>tycho-staged</id>
-            <url>https://oss.sonatype.org/content/repositories/orgeclipsetycho-1070</url>
+            <id>codehaus-snapshots</id>
+            <name>disable dead 'Codehaus Snapshots' repository, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=481478</name>
+            <url>http://nexus.codehaus.org/snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>ossrh-snapshots</id>
+            <name>ossrh-snapshots</name>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </pluginRepository>
     </pluginRepositories>
+
 
     <build>
 

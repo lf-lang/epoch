@@ -27,5 +27,5 @@ jobs:
       - name: Install pnpm
         run: npm i -g pnpm
       - name: Run Eclipse tests
-        run: mvn -P test integration-test || mvn -U -P test integration-test
+        run: mvn -U -P test integration-test
         shell: bash

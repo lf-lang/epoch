@@ -27,7 +27,7 @@ jobs:
         run: mvn -version
         shell: bash
       - name: Build and package epoch
-        run: mvn package || mvn -U package
+        run: mvn -U package
         shell: bash
       - name: Deploy nightly release
         uses: marvinpinto/action-automatic-releases@latest
