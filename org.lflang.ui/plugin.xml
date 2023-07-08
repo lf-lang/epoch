@@ -674,4 +674,10 @@
           editorID="org.lflang.LF">
     </editor>
  </extension>
+ <extension
+       point="org.eclipse.ui.startup">
+    <startup
+          class="org.lflang.ui.actions.EditorSaveHandler">
+    </startup>
+ </extension>
 </plugin>

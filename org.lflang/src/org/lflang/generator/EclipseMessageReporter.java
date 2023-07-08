@@ -51,6 +51,17 @@ import org.lflang.util.FileUtil;
 public class EclipseMessageReporter extends MessageReporterBase implements MessageReporter {
     
     private FileConfig fileConfig = null;
+    
+    public static void removeMessageMarkers(IResource resource) throws CoreException {
+        IMarker[] markers = resource.findMarkers(null, true, IResource.DEPTH_INFINITE);
+        
+        for (IMarker marker : markers) {
+            // Only remove those markers created by the LF compilation
+            if (marker.getAttribute(EclipseMessageReporter.class.getName(), false)) {
+                marker.delete();
+            }
+        }
+    }
 
     public EclipseMessageReporter(FileConfig fc) {
         fileConfig = fc;
@@ -131,14 +142,7 @@ public class EclipseMessageReporter extends MessageReporterBase implements Messa
         super.clearHistory();
         try {
             IResource resource = FileUtil.getIResource(fileConfig.srcFile);
-            IMarker[] markers = resource.findMarkers(null, true, IResource.DEPTH_INFINITE);
-            
-            for (IMarker marker : markers) {
-                // Only remove those markers created by the LF compilation
-                if (marker.getAttribute(this.getClass().getName(), false)) {
-                    marker.delete();
-                }
-            }
+            EclipseMessageReporter.removeMessageMarkers(resource);
         } catch (Exception e) {
             // Ignore, but print a warning
             System.err.println("WARNING: Deleting markers in the IDE failed:\n" + e.toString());
