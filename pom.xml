@@ -38,6 +38,12 @@
         <!-- Non-version properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <tycho.disableP2Mirrors>true</tycho.disableP2Mirrors>
+
+        <!-- JSON version used in the LF Verifier -->
+        <jsonVersion>20230618</jsonVersion>
+
+        <!-- ANTLR4 version used in the LF Verifier (not the one used in xtext) -->
+        <antlr4Version>4.7.2</antlr4Version>
     </properties>
 
     <profiles>
