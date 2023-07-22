@@ -41,24 +41,27 @@ jobs:
             org.lflang.rca/target/products/*.zip
             org.lflang.updatesite/target/*.zip
         if: ${{ inputs.nightly == true }}
-      # - name: Upload Build Artifact (Linux)
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: Epoch-Linux
-      #     path: org.lflang.rca/target/products/epoch_ide_*-linux.gtk.x86_64.tar.gz
-      #     if-no-files-found: error
-      #   if: ${{ inputs.nightly == false }} 
-      # - name: Upload Build Artifact (Mac)
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: Epoch-Mac
-      #     path: org.lflang.rca/target/products/epoch_ide_*-macosx.cocoa.x86_64.tar.gz
-      #     if-no-files-found: error
-      #   if: ${{ inputs.nightly == false }}  
-      # - name: Upload Build Artifact (Windows)
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: Epoch-Win
-      #     path: org.lflang.rca/target/products/epoch_ide_*-win32.win32.x86_64.zip
-      #     if-no-files-found: error
-      #   if: ${{ inputs.nightly == false }}
+      - name: Upload Build Artifact (Linux)
+        uses: actions/upload-artifact@v2
+        with:
+          name: Epoch-Linux
+          path: org.lflang.rca/target/products/epoch_ide_*-linux.gtk.x86_64.tar.gz
+          if-no-files-found: error
+          retention-days: 5
+        if: ${{ inputs.nightly == false }} 
+      - name: Upload Build Artifact (Mac)
+        uses: actions/upload-artifact@v2
+        with:
+          name: Epoch-Mac
+          path: org.lflang.rca/target/products/epoch_ide_*-macosx.cocoa.*.tar.gz
+          if-no-files-found: error
+          retention-days: 5
+        if: ${{ inputs.nightly == false }}  
+      - name: Upload Build Artifact (Windows)
+        uses: actions/upload-artifact@v2
+        with:
+          name: Epoch-Win
+          path: org.lflang.rca/target/products/epoch_ide_*-win32.win32.x86_64.zip
+          if-no-files-found: error
+          retention-days: 5
+        if: ${{ inputs.nightly == false }}
