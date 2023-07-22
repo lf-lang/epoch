@@ -43,10 +43,12 @@
       <unit id="jakarta.activation" version="0.0.0"/>
       <unit id="javax.activation" version="0.0.0"/>
       <unit id="javaewah" version="0.0.0"/>
+      <unit id="org.antlr.runtime" version="0.0.0"/>
       <repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20230531010532/repository/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-      <unit id="org.lflang.epoch.external.dependencies" version="0.0.0"/>
+      <unit id="org.lflang.epoch.mirror.json" version="0.0.0"/>
+      <unit id="org.lflang.epoch.mirror.kotlin" version="0.0.0"/>
       <repository location="https://lf-lang.github.io/epoch-external-dependencies/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">

@@ -1,7 +1,7 @@
 
 package org.lflang.generator.cpp;
 
-import org.lflang.KotlinMock;
+import org.lflang.Mock;
 import org.lflang.Target;
 import org.lflang.generator.GeneratorBase;
 import org.lflang.generator.LFGeneratorContext;
@@ -13,17 +13,17 @@ public class CppGenerator extends GeneratorBase {
     public CppGenerator(LFGeneratorContext context,
             LFGlobalScopeProvider scopeProvider) {
         super(context);
-        throw new IllegalStateException(KotlinMock.MSG);
+        throw new IllegalStateException(Mock.KOTLIN_MSG);
     }
 
     @Override
     public TargetTypes getTargetTypes() {
-        throw new IllegalStateException(KotlinMock.MSG);
+        throw new IllegalStateException(Mock.KOTLIN_MSG);
     }
 
     @Override
     public Target getTarget() {
-        throw new IllegalStateException(KotlinMock.MSG);
+        throw new IllegalStateException(Mock.KOTLIN_MSG);
     }
 
 }

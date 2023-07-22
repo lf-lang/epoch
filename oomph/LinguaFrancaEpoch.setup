@@ -332,7 +332,12 @@
         <requirement
             name="com.fasterxml.jackson.core.jackson-databind"/>
         <requirement
-            name="org.lflang.epoch.external.dependencies"/>
+            name="org.antlr.runtime"
+            versionRange="4.7.2"/>
+        <requirement
+            name="org.lflang.epoch.mirror.json"/>
+        <requirement
+            name="org.lflang.epoch.mirror.kotlin"/>
         <repositoryList
             name="DefaultRepositories">
           <repository

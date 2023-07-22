@@ -8,8 +8,8 @@
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry excluding="org/lflang/cli/" kind="src" path="src"/>
 	<classpathentry kind="src" path="lingua-franca/core/src/main/resources"/>
-	<classpathentry kind="src" path="src-kotlin-mock"/>
-	<classpathentry kind="src" path="lingua-franca/core/src/main/java"/>
+	<classpathentry kind="src" path="src-mock"/>
+	<classpathentry excluding="org/lflang/analyses/" kind="src" path="lingua-franca/core/src/main/java"/>
 	<classpathentry kind="src" path="src-gen"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
