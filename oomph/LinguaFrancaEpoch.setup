@@ -333,7 +333,7 @@
             name="com.fasterxml.jackson.core.jackson-databind"/>
         <requirement
             name="org.antlr.runtime"
-            versionRange="4.7.2"/>
+            versionRange="(4.7.2,4.8.0]"/>
         <requirement
             name="org.lflang.epoch.mirror.json"/>
         <requirement
