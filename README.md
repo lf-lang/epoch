@@ -21,13 +21,13 @@ For Linux and Windows, you can just run the resulting exutable.
 MacOS requires extra steps before being able to execute the app:
 
 ```
-xattr -cr Epoch.app
+xattr -cr epoch.app
 ```
 
-Drag the Epoch.app file to your Applications folder.
+Drag the epoch.app file to your Applications folder.
 You can then invoke the App as follows:
 ```
-open -a Epoch.app
+open epoch.app
 ```
 
 Please note that Java version 17 or higher is required to run Epoch.

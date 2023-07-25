@@ -1,29 +1,29 @@
 
-package org.lflang.generator.ts;
+package org.lflang.generator.rust;
 
-import org.lflang.KotlinMock;
+import org.lflang.Mock;
 import org.lflang.Target;
 import org.lflang.generator.GeneratorBase;
 import org.lflang.generator.LFGeneratorContext;
 import org.lflang.generator.TargetTypes;
 import org.lflang.scoping.LFGlobalScopeProvider;
 
-public class TSGenerator extends GeneratorBase {
+public class RustGenerator extends GeneratorBase {
 
-    public TSGenerator(LFGeneratorContext context,
+    public RustGenerator(LFGeneratorContext context,
             LFGlobalScopeProvider scopeProvider) {
         super(context);
-        throw new IllegalStateException(KotlinMock.MSG);
+        throw new IllegalStateException(Mock.KOTLIN_MSG);
     }
 
     @Override
     public TargetTypes getTargetTypes() {
-        throw new IllegalStateException(KotlinMock.MSG);
+        throw new IllegalStateException(Mock.KOTLIN_MSG);
     }
 
     @Override
     public Target getTarget() {
-        throw new IllegalStateException(KotlinMock.MSG);
+        throw new IllegalStateException(Mock.KOTLIN_MSG);
     }
 
 }
