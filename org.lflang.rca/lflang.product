@@ -103,6 +103,7 @@ OF SUCH DAMAGE.
       <feature id="de.cau.cs.kieler.klighd.freehep.feature"/>
       <feature id="org.eclipse.tm.terminal.feature"/>
       <feature id="org.eclipse.epp.mpc"/>
+      <feature id="org.eclipse.elk.sdk.feature"/>
    </features>
 
    <configurations>
