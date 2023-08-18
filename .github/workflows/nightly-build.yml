@@ -12,4 +12,4 @@ jobs:
     with:
       nightly: true
     secrets:
-      envPAT: ${{ secrets.NIGHTLY_BUILD }}
+      envPAT: ${{ secrets.GITHUB_TOKEN }}
