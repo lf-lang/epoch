@@ -16,7 +16,7 @@ jobs:
           submodules: recursive
           fetch-depth: 0
       - name: Prepare build environment
-        uses: ./.github/actions/prepare-build-env
+        uses: lf-lang/lingua-franca/.github/actions/prepare-build-env@master
       - name: Check Maven/Java configuration
         run: mvn -version
         shell: bash

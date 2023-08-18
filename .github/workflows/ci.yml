@@ -11,17 +11,15 @@ on:
     branches-ignore:
       - 'nightly'
 
-jobs:
-  # Cancel previous workflow runs.
-  cancel:
-    uses: lf-lang/epoch/.github/workflows/cancel.yml@main
+concurrency:
+  group: ci-${{ github.ref }}-${{ github.event_path }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
 
+jobs:
   # Run the Maven build.
   build:
-    uses: lf-lang/epoch/.github/workflows/build.yml@main
-    needs: cancel
+    uses: ./.github/workflows/build.yml
 
   # Run tests for Eclipse.
   eclipse-tests:
-    uses: lf-lang/epoch/.github/workflows/eclipse-tests.yml@main
-    needs: cancel
+    uses: ./.github/workflows/eclipse-tests.yml

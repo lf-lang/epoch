@@ -11,5 +11,3 @@ jobs:
     uses: ./.github/workflows/build.yml
     with:
       nightly: true
-    secrets:
-      envPAT: ${{ secrets.GITHUB_TOKEN }}
