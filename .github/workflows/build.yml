@@ -7,10 +7,6 @@ on:
         required: false
         type: boolean
         default: false
-      release:
-        required: false
-        type: boolean
-        default: false
   workflow_dispatch:
 
 jobs:
@@ -49,7 +45,7 @@ jobs:
           path: org.lflang.rca/target/products/epoch_ide_*-linux.gtk.x86_64.tar.gz
           if-no-files-found: error
           retention-days: 5
-        if: ${{ inputs.nightly == false && inputs.release == false }}
+        if: ${{ inputs.nightly == false }} 
       - name: Upload Build Artifact (Mac)
         uses: actions/upload-artifact@v2
         with:
@@ -57,7 +53,7 @@ jobs:
           path: org.lflang.rca/target/products/epoch_ide_*-macosx.cocoa.*.tar.gz
           if-no-files-found: error
           retention-days: 5
-        if: ${{ inputs.nightly == false && inputs.release == false }}
+        if: ${{ inputs.nightly == false }}  
       - name: Upload Build Artifact (Windows)
         uses: actions/upload-artifact@v2
         with:
@@ -65,4 +61,4 @@ jobs:
           path: org.lflang.rca/target/products/epoch_ide_*-win32.win32.x86_64.zip
           if-no-files-found: error
           retention-days: 5
-        if: ${{ inputs.nightly == false && inputs.release == false }}
+        if: ${{ inputs.nightly == false }}
