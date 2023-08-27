@@ -28,5 +28,5 @@ jobs:
         with:
           node-version: 18
       - name: Run Eclipse tests
-        run: mvn -U -P test integration-test
+        run: mvn -B -U -P test integration-test
         shell: bash
