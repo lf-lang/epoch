@@ -15,17 +15,18 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-      - name: Prepare build environment
-        uses: lf-lang/lingua-franca/.github/actions/prepare-build-env@master
-      - name: Check Maven/Java configuration
-        run: mvn -version
+      - name: Set up Java 17 and check Mavan/Java configuration
+        run: |
+          echo "$JAVA_HOME_17_X64/bin" >> $GITHUB_PATH
+          echo "JAVA_HOME=$JAVA_HOME_17_X64" >> $GITHUB_ENV
+          echo $(which java)
+          echo $JAVA_HOME
+          mvn -version
         shell: bash
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Install pnpm
-        run: npm i -g pnpm
       - name: Run Eclipse tests
         run: mvn -U -P test integration-test
         shell: bash
