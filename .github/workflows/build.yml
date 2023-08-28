@@ -7,6 +7,10 @@ on:
         required: false
         type: boolean
         default: false
+      lingua-franca-ref:
+        type: string
+        required: false
+
   workflow_dispatch:
 
 jobs:
@@ -18,11 +22,28 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-      - name: Prepare build environment
-        uses: lf-lang/lingua-franca/.github/actions/prepare-build-env@master
+      - uses: actions/setup-java@v3
+        with:  
+          distribution: temurin
+          java-version: 17
       - name: Check Maven/Java configuration
         run: mvn -version
         shell: bash
+      - name: Update `lingua-franca` submodule
+        run: |
+          cd org.lflang/lingua-franca
+          git checkout ${{ inputs.lingua-franca-ref }}
+          git pull
+          git submodule update
+        shell: bash
+        if: ${{ inputs.lingua-franca-ref != '' }}
+      - name: Commit to the `nightly` branch
+        run: |
+          git status --porcelain | grep . && git commit -a -m 'Update lingua-franca submodule'
+          git push -f origin/nightly
+          git switch nightly
+          git pull
+          if: ${{ inputs.lingua-franca-ref != '' && inputs.nightly == true }}
       - name: Build and package epoch
         run: mvn -U package
         shell: bash
