@@ -43,6 +43,9 @@ jobs:
       - name: Commit to the `nightly` branch
         run: |
           git status --porcelain | grep . && git commit -a -m 'Update lingua-franca submodule'
+          git push -f origin/nightly
+          git switch nightly
+          git pull
         if: ${{ inputs.lingua-franca-ref != '' && inputs.nightly == true }}
       - name: Build and package epoch
         run: mvn -U package
