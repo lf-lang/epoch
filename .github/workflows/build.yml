@@ -63,7 +63,7 @@ jobs:
       - name: Commit to the `latest` branch
         run: |
           git switch latest || git checkout -b latest
-          git add lingua-franca
+          git add org.lflang/lingua-franca
           git status --porcelain | grep . && git commit -m 'Update lingua-franca submodule'
           git push
         shell: bash
