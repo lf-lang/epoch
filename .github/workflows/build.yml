@@ -34,6 +34,7 @@ jobs:
         run: |
           ls -l
           cd org.lflang/lingua-franca
+          git fetch --all
           git checkout ${{ inputs.lingua-franca-ref }}
           git pull
           git submodule update
@@ -42,9 +43,9 @@ jobs:
       - name: Commit to the `nightly` branch
         run: |
           git status --porcelain | grep . && git commit -a -m 'Update lingua-franca submodule'
-          git push -f origin/nightly
-          git switch nightly
-          git pull
+        #   git push -f origin/nightly
+        #   git switch nightly
+        #   git pull
           if: ${{ inputs.lingua-franca-ref != '' && inputs.nightly == true }}
       - name: Build and package epoch
         run: mvn -U package
