@@ -9,9 +9,11 @@ on:
 jobs:
   build:
     uses: ./.github/workflows/build.yml
+    secrets:
+      gpg-key: ${{ secrets.GPG_PRIVATE_KEY }}
+      gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
     with:
       nightly: true
       lingua-franca-ref: master
-      gpg-key: ${{ secrets.GPG_PRIVATE_KEY }}
-      gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
+      
       
