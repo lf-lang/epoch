@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  run:
+  build-epoch:
     runs-on: ubuntu-latest
     steps:
       - name: Check out epoch repository
