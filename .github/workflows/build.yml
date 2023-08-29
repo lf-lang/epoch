@@ -63,7 +63,7 @@ jobs:
       - name: Commit to the `nightly` branch
         run: |
           git status --porcelain | grep . && git commit -a -m 'Update lingua-franca submodule'
-          git push -f origin/nightly
+          git push -f origin nightly
           git switch nightly
           git pull
         shell: bash
