@@ -14,6 +14,11 @@ on:
       lingua-franca-ref:
         type: string
         required: false
+    secrets:
+      gpg-passphrase:
+        required: false
+      gpg-key:
+        required: false
 
   workflow_dispatch:
     inputs:
@@ -21,6 +26,7 @@ on:
         type: boolean
         required: false
         default: true
+
 
 jobs:
   build-epoch:
@@ -51,8 +57,8 @@ jobs:
       - name: Configure Git for francabot
         uses: lf-lang/lingua-franca/.github/actions/setup-francabot@francabot
         with:
-          gpg-key: ${{ secrets.GPG_PRIVATE_KEY }}
-          gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
+          gpg-key: ${{ secrets.gpg-key }}
+          gpg-passphrase: ${{ secrets.gpg-key }}
         if: ${{ inputs.lingua-franca-ref != '' && inputs.nightly == true }}
       - name: Commit to the `nightly` branch
         run: |

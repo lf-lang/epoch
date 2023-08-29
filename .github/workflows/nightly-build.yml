@@ -12,3 +12,6 @@ jobs:
     with:
       nightly: true
       lingua-franca-ref: master
+      gpg-key: ${{ secrets.GPG_PRIVATE_KEY }}
+      gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
+      
