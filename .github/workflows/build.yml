@@ -48,6 +48,12 @@ jobs:
           git submodule update
         shell: bash
         if: ${{ inputs.lingua-franca-ref != '' }}
+      - name: Configure Git for francabot
+        uses: lf-lang/release-tools/.github/actions/configure-git@main
+        with:
+          gpg-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
+        if: ${{ inputs.lingua-franca-ref != '' && inputs.nightly == true }}
       - name: Commit to the `nightly` branch
         run: |
           git status --porcelain | grep . && git commit -a -m 'Update lingua-franca submodule'
