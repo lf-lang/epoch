@@ -58,7 +58,7 @@ jobs:
         uses: lf-lang/lingua-franca/.github/actions/setup-francabot@francabot
         with:
           gpg-key: ${{ secrets.gpg-key }}
-          gpg-passphrase: ${{ secrets.gpg-gpg-passphrase }}
+          gpg-passphrase: ${{ secrets.gpg-passphrase }}
         if: ${{ inputs.lingua-franca-ref != '' && inputs.nightly == true }}
       - name: Commit to the `nightly` branch
         run: |
