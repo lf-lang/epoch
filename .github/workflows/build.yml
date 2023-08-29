@@ -31,6 +31,7 @@ jobs:
         shell: bash
       - name: Update `lingua-franca` submodule
         run: |
+          ls -l
           cd org.lflang/lingua-franca
           git checkout ${{ inputs.lingua-franca-ref }}
           git pull
