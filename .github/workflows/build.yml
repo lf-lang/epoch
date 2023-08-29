@@ -62,10 +62,9 @@ jobs:
         if: ${{ inputs.lingua-franca-ref != '' && inputs.nightly == true }}
       - name: Commit to the `nightly` branch
         run: |
-          git stash
           git switch nightly || git checkout -b nightly
-          git stash apply
-          git status --porcelain | grep . && git commit -a -m 'Update lingua-franca submodule'
+          git add lingua-franca
+          git status --porcelain | grep . && git commit -m 'Update lingua-franca submodule'
           git push
         shell: bash
         if: ${{ inputs.lingua-franca-ref != '' && inputs.nightly == true }}
