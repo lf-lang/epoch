@@ -55,7 +55,7 @@ jobs:
         shell: bash
         if: ${{ inputs.lingua-franca-ref != '' }}
       - name: Configure Git for francabot
-        uses: lf-lang/lingua-franca/.github/actions/setup-francabot@francabot
+        uses: lf-lang/lingua-franca/.github/actions/setup-francabot@master
         with:
           gpg-key: ${{ secrets.gpg-key }}
           gpg-passphrase: ${{ secrets.gpg-passphrase }}
