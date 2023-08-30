@@ -58,15 +58,14 @@ jobs:
         uses: lf-lang/lingua-franca/.github/actions/setup-francabot@francabot
         with:
           gpg-key: ${{ secrets.gpg-key }}
-          gpg-passphrase: ${{ secrets.gpg-key }}
+          gpg-passphrase: ${{ secrets.gpg-passphrase }}
         if: ${{ inputs.lingua-franca-ref != '' && inputs.nightly == true }}
-      - name: Commit to the `nightly` branch
+      - name: Commit to the `latest` branch
         run: |
-          export GPG_TTY=$(tty)
-          git status --porcelain | grep . && git commit -a -m 'Update lingua-franca submodule'
-          git push -f origin/nightly
-          git switch nightly
-          git pull
+          git switch latest || git checkout -b latest
+          git add org.lflang/lingua-franca
+          git status --porcelain | grep . && git commit -m 'Update lingua-franca submodule'
+          git push -f --set-upstream origin latest
         shell: bash
         if: ${{ inputs.lingua-franca-ref != '' && inputs.nightly == true }}
       - name: Build and package epoch
