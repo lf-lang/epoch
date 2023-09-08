@@ -62,12 +62,13 @@ jobs:
         if: ${{ inputs.lingua-franca-ref != '' && inputs.nightly == true }}
       - name: Commit to the `latest` branch
         run: |
-          git switch latest || git checkout -b latest
           git add org.lflang/lingua-franca
           git status --porcelain | grep . && git commit -m 'Update lingua-franca submodule'
-          git push -f --set-upstream origin latest
+          git switch latest || git checkout -b latest
+          git reset --hard HEAD@{1}
+          git push -f
         shell: bash
-        if: ${{ inputs.lingua-franca-ref != '' && inputs.nightly == true }}
+        if: ${{ inputs.nightly == true }}
       - name: Build and package epoch
         run: mvn -U package
         shell: bash
