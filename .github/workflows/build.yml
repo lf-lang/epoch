@@ -64,7 +64,7 @@ jobs:
         run: |
           git add org.lflang/lingua-franca
           git status --porcelain | grep . && git commit -m 'Update lingua-franca submodule'
-          git push -f --set-upstream origin latest
+          git push -f origin main:latest
         shell: bash
         if: ${{ inputs.nightly == true }}
       - name: Build and package epoch
