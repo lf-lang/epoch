@@ -37,17 +37,20 @@ open epoch.app
 Please note that Java version 17 or higher is required to run Epoch.
 
 ## Building from Source
+### Install Build Tools
+The following tools are needed to build Epoch IDE:
+- Java Development Kit, version 17 or higher
+- [Apache Maven](https://maven.apache.org/)
 
-Clone this repo:
-
+### Clone this Repository
+It is recommended to get the source code by cloning this repository instead of downloading from releases page, as there are necessary git submodules that need to be fetched.
 ```
-git clone git@github.com:lf-lang/epoch.git
-cd epoch
+git clone https://github.com/lf-lang/epoch.git --depth=1 && cd epoch
 git submodule update --init --recursive
 ```
 
-Build Epoch:
-
+### Create Build
+Create a build by executing
 ```
 mvn -U clean package
 ```
