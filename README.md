@@ -56,12 +56,11 @@ mvn -U clean package
 ```
 
 The location of the resulting Epoch app depends on your platform:
- - Windows: `./org.lflang.rca/target/products/org.lflang.rca/win32/win32/x86_64/epoch/epoch.exe`
  - Linux: `./org.lflang.rca/target/products/org.lflang.rca/linux/gtk/x86_64/epoch/epoch`
- - macOS (Intel): `./org.lflang.rca/target/products/org.lflang.rca/macosx/cocoa/x86_64/epoch.app`
  - macOS (Apple): `./org.lflang.rca/target/products/org.lflang.rca/macosx/cocoa/aarch64/epoch.app`
-
-On Windows, execute `epoch.exe`. On Linux, run the `epoch` binary. On Mac, run `epoch.app` (drag into your `Applications` folder for installation).
+ - macOS (Intel): `./org.lflang.rca/target/products/org.lflang.rca/macosx/cocoa/x86_64/epoch.app`
+ - Windows: `./org.lflang.rca/target/products/org.lflang.rca/win32/win32/x86_64/epoch/epoch.exe`
+On Linux, run the `epoch` binary. On Mac, run `epoch.app` (drag into your `Applications` folder for installation). On Windows, execute `epoch.exe`. 
 
 ## Develop Using Eclipse
 
