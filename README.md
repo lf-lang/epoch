@@ -20,7 +20,7 @@ Extract the contents from the archive. For example:
 open epoch_ide_0.4.0-macosx.cocoa.aarch64.tar.gz
 ```
 
-For Linux and Windows, you can just run the resulting exutable.
+For Linux and Windows, you can just run the resulting executable.
 
 MacOS requires extra steps before being able to execute the app:
 
@@ -52,33 +52,13 @@ Build Epoch:
 mvn -U clean package
 ```
 
-The location of the resulting Epoch app depends on your platform.
+The location of the resulting Epoch app depends on your platform:
+ - Windows: `./org.lflang.rca/target/products/org.lflang.rca/win32/win32/x86_64/epoch/epoch.exe`
+ - Linux: `./org.lflang.rca/target/products/org.lflang.rca/linux/gtk/x86_64/epoch/epoch`
+ - macOS (Intel): `./org.lflang.rca/target/products/org.lflang.rca/macosx/cocoa/x86_64/epoch.app`
+ - macOS (Apple): `./org.lflang.rca/target/products/org.lflang.rca/macosx/cocoa/aarch64/epoch.app`
 
-### MacOS with Intel Silicon
-
-Drag the Epoch.app application into your applications folder.
-In the finder, the folder containing the Epoch.app application is (relative to your epoch git clone root):
-
-```
-org.lflang.rca/target/products/org.lflang.rca/macosx/cocoa/x86_64/
-```
-
-### MacOS with Apple Silicon
-
-Drag the Epoch.app application into your applications folder.
-In the finder, the folder containing the Epoch.app application is (relative to your epoch git clone root):
-
-```
-org.lflang.rca/target/products/org.lflang.rca/macosx/cocoa/aarch64/
-```
-
-### Linux
-
-**FIXME**
-
-### Windows
-
-**FIXME**
+On Windows, execute `epoch.exe`. On Linux, run the `epoch` binary. On Mac, drag the `epoch.app` application into your applications folder.
 
 ## Develop Using Eclipse
 
