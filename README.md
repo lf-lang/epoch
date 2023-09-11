@@ -20,7 +20,7 @@ Extract the contents from the archive. For example:
 open epoch_ide_0.4.0-macosx.cocoa.aarch64.tar.gz
 ```
 
-For Linux and Windows, you can just run the resulting exutable.
+For Linux and Windows, you can just run the resulting executable.
 
 MacOS requires extra steps before being able to execute the app:
 
@@ -37,48 +37,30 @@ open epoch.app
 Please note that Java version 17 or higher is required to run Epoch.
 
 ## Building from Source
+### Install Build Tools
+The following tools are needed to build Epoch IDE:
+- Java Development Kit, version 17 or higher
+- [Apache Maven](https://maven.apache.org/)
 
-Clone this repo:
-
+### Clone this Repository
+It is recommended to get the source code by cloning this repository instead of downloading from releases page, as there are necessary git submodules that need to be fetched.
 ```
-git clone git@github.com:lf-lang/epoch.git
-cd epoch
+git clone https://github.com/lf-lang/epoch.git --depth=1 && cd epoch
 git submodule update --init --recursive
 ```
 
-Build Epoch:
-
+### Create Build
+Create a build by executing
 ```
 mvn -U clean package
 ```
 
-The location of the resulting Epoch app depends on your platform.
-
-### MacOS with Intel Silicon
-
-Drag the Epoch.app application into your applications folder.
-In the finder, the folder containing the Epoch.app application is (relative to your epoch git clone root):
-
-```
-org.lflang.rca/target/products/org.lflang.rca/macosx/cocoa/x86_64/
-```
-
-### MacOS with Apple Silicon
-
-Drag the Epoch.app application into your applications folder.
-In the finder, the folder containing the Epoch.app application is (relative to your epoch git clone root):
-
-```
-org.lflang.rca/target/products/org.lflang.rca/macosx/cocoa/aarch64/
-```
-
-### Linux
-
-**FIXME**
-
-### Windows
-
-**FIXME**
+The location of the resulting Epoch app depends on your platform:
+ - Linux: `./org.lflang.rca/target/products/org.lflang.rca/linux/gtk/x86_64/epoch/epoch`
+ - macOS (Apple): `./org.lflang.rca/target/products/org.lflang.rca/macosx/cocoa/aarch64/epoch.app`
+ - macOS (Intel): `./org.lflang.rca/target/products/org.lflang.rca/macosx/cocoa/x86_64/epoch.app`
+ - Windows: `./org.lflang.rca/target/products/org.lflang.rca/win32/win32/x86_64/epoch/epoch.exe`
+On Linux, run the `epoch` binary. On Mac, run `epoch.app` (drag into your `Applications` folder for installation). On Windows, execute `epoch.exe`. 
 
 ## Develop Using Eclipse
 
