@@ -2,7 +2,11 @@
 
 Epoch is an Eclipse-based Integrated Development Environment (IDE) for Lingua Franca.
 
-## Using Epoch
+## Download
+
+Download instructions can be found on the [Epoch IDE](https://www.lf-lang.org/docs/handbook/epoch-ide) page.
+
+## Direct Download of the Latest Release
 You can download the latest release of Epoch from the Lingua Franca Release page:
 
  - [Epoch for x86_64 Linux](https://github.com/lf-lang/lingua-franca/releases/download/v0.4.0/epoch_ide_0.4.0-linux.gtk.x86_64.tar.gz)
@@ -32,9 +36,7 @@ open epoch.app
 
 Please note that Java version 17 or higher is required to run Epoch.
 
-## Developer Setup
-
-### Develop Using Maven
+## Building from Source
 
 Clone this repo:
 
@@ -52,7 +54,7 @@ mvn -U clean package
 
 The location of the resulting Epoch app depends on your platform.
 
-#### MacOS with Intel Silicon
+### MacOS with Intel Silicon
 
 Drag the Epoch.app application into your applications folder.
 In the finder, the folder containing the Epoch.app application is (relative to your epoch git clone root):
@@ -61,7 +63,7 @@ In the finder, the folder containing the Epoch.app application is (relative to y
 org.lflang.rca/target/products/org.lflang.rca/macosx/cocoa/x86_64/
 ```
 
-#### MacOS with Apple Silicon
+### MacOS with Apple Silicon
 
 Drag the Epoch.app application into your applications folder.
 In the finder, the folder containing the Epoch.app application is (relative to your epoch git clone root):
@@ -70,27 +72,16 @@ In the finder, the folder containing the Epoch.app application is (relative to y
 org.lflang.rca/target/products/org.lflang.rca/macosx/cocoa/aarch64/
 ```
 
-#### Linux
+### Linux
 
 **FIXME**
 
-#### Windows
+### Windows
 
 **FIXME**
 
-### To Update Lingua-Franca
-
-To update Epoch to the current development version in the master branch:
-
-```
-cd org.lflang/lingua-franca
-git checkout master
-git pull
-cd ../..
-mvn package
-```
-
-### Develop Using Eclipse
+## Develop Using Eclipse
 
 To work on the Epoch codebase in Eclipse, consult our wiki for [step-by-step setup instructions](https://github.com/lf-lang/epoch/wiki/Developer-Eclipse-Setup-with-Oomph).
+Note that this is no longer supported. We recommend using IntelliJ instead.
 
