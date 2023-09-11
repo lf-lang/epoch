@@ -61,7 +61,7 @@ The location of the resulting Epoch app depends on your platform:
  - macOS (Intel): `./org.lflang.rca/target/products/org.lflang.rca/macosx/cocoa/x86_64/epoch.app`
  - macOS (Apple): `./org.lflang.rca/target/products/org.lflang.rca/macosx/cocoa/aarch64/epoch.app`
 
-On Windows, execute `epoch.exe`. On Linux, run the `epoch` binary. On Mac, drag the `epoch.app` application into your applications folder.
+On Windows, execute `epoch.exe`. On Linux, run the `epoch` binary. On Mac, run `epoch.app` (drag into your `Applications` folder for installation).
 
 ## Develop Using Eclipse
 
