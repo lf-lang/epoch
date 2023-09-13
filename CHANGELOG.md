@@ -1,5 +1,17 @@
 # Changelog
  
+## [v0.5.1](https://github.com/lf-lang/epoch/tree/v0.5.1) (2023-09-12)
+
+**Highlights**
+
+This release features an updated Lingua Franca compiler.
+
+**📖 Documentation**
+
+- Updated README [\#49](https://github.com/lf-lang/epoch/pull/49) (@edwardalee)
+
+
+ 
 ## [v0.5.0](https://github.com/lf-lang/epoch/tree/v0.5.0) (2023-09-01)
 
 **Highlights**
