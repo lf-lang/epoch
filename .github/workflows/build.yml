@@ -4,18 +4,22 @@ on:
   workflow_call:
     inputs:
       nightly:
-        required: false
         type: boolean
+        description: Whether this is a nightly build
+        required: false
         default: false
       upload-artifacts:
         type: boolean
+        description: Whether to upload build artifacts
         required: false
         default: true
       lingua-franca-ref:
         type: string
+        description: Ref of the lingua-franca submodule to check out
         required: false
       lingua-franca-repo:
         type: string
+        description: Full repository name of the form <owner>/<repo>
         required: false
     secrets:
       gpg-passphrase:
