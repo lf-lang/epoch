@@ -60,7 +60,7 @@ jobs:
           git fetch --all
           git checkout ${{ inputs.lingua-franca-ref }}
           git pull
-          git submodule update
+          git submodule update --recursive
         shell: bash
         if: ${{ inputs.lingua-franca-ref != '' }}
       - name: Configure Git for francabot
