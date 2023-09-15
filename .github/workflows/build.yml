@@ -13,6 +13,11 @@ on:
         description: Whether to upload build artifacts
         required: false
         default: true
+      epoch-ref:
+        type: string
+        description: Ref of the epoch repository to check out
+        required: false
+        default: main
       lingua-franca-ref:
         type: string
         description: Ref of the lingua-franca submodule to check out
@@ -43,6 +48,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: lf-lang/epoch
+          ref: ${{ inputs.epoch-ref }}
           submodules: recursive
           fetch-depth: 0
       - uses: actions/setup-java@v3
