@@ -14,6 +14,9 @@ on:
       lingua-franca-ref:
         type: string
         required: false
+      lingua-franca-repo:
+        type: string
+        required: false
     secrets:
       gpg-passphrase:
         required: false
@@ -45,6 +48,12 @@ jobs:
       - name: Check Maven/Java configuration
         run: mvn -version
         shell: bash
+      - name: Point submodule to given repo
+        run: |
+          git submodule set-url -- org.lflang/lingua-franca https://github.com/${{ inputs.lingua-franca-repo }}
+          git submodule update --init --recursive
+        shell: bash
+        if: ${{ inputs.lingua-franca-repo != '' }}
       - name: Update `lingua-franca` submodule
         run: |
           cd org.lflang/lingua-franca
