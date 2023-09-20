@@ -338,6 +338,10 @@
             name="org.lflang.epoch.mirror.json"/>
         <requirement
             name="org.lflang.epoch.mirror.kotlin"/>
+        <requirement
+            name="org.lflang.epoch.mirror.jcip"/>
+        <requirement
+            name="com.github.spotbugs.plugin.eclipse.feature.group"/>
         <repositoryList
             name="DefaultRepositories">
           <repository
@@ -358,6 +362,8 @@
               url="https://rtsys.informatik.uni-kiel.de/~kieler/updatesite/sprotty/0.9.0/"/>
           <repository
               url="https://lf-lang.github.io/epoch-external-dependencies/"/>
+          <repository
+              url="https://spotbugs.github.io/eclipse/"/>
         </repositoryList>
       </targlet>
     </setupTask>

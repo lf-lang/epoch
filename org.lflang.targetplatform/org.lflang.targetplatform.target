@@ -49,6 +49,7 @@
     <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
       <unit id="org.lflang.epoch.mirror.json" version="0.0.0"/>
       <unit id="org.lflang.epoch.mirror.kotlin" version="0.0.0"/>
+      <unit id="org.lflang.epoch.mirror.jcip" version="0.0.0"/>
       <repository location="https://lf-lang.github.io/epoch-external-dependencies/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
@@ -81,6 +82,10 @@
       <unit id="org.eclipse.elk.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.elk.ui.feature.feature.group" version="0.0.0"/>
       <repository location="https://download.eclipse.org/elk/updates/releases/0.8.1/"/>
+    </location>
+    <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+      <unit id="com.github.spotbugs.plugin.eclipse.feature.group" version="0.0.0"/>
+      <repository location="https://spotbugs.github.io/eclipse/"/>
     </location>
   </locations>
 </target>
