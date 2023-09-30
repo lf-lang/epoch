@@ -33,6 +33,7 @@ import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.lsp4j.DiagnosticSeverity;
 import org.eclipse.xtext.diagnostics.Severity;
 import org.eclipse.xtext.validation.EObjectDiagnosticImpl;
@@ -68,9 +69,9 @@ public class EclipseMessageReporter extends MessageReporterBase implements Messa
      * {@inheritDoc}
      */
     @Override
-    protected void reportOnNode(EObject node, DiagnosticSeverity severity, String message) {
+    protected void reportOnNode(EObject node, EStructuralFeature feature, DiagnosticSeverity severity, String message) {
         if (node != null) {
-             var diagnostic = new EObjectDiagnosticImpl(convertToXtext(severity), null, message, node, null, -1, null);
+             var diagnostic = new EObjectDiagnosticImpl(convertToXtext(severity), null, message, node, feature, -1, null);
              var range = new Range(
                      Position.fromOneBased(diagnostic.getLine(), diagnostic.getColumn()),
                      Position.fromOneBased(diagnostic.getLineEnd(), diagnostic.getColumnEnd()));
