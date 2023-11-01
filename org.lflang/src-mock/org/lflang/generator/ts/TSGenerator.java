@@ -2,11 +2,11 @@
 package org.lflang.generator.ts;
 
 import org.lflang.Mock;
-import org.lflang.Target;
 import org.lflang.generator.GeneratorBase;
 import org.lflang.generator.LFGeneratorContext;
 import org.lflang.generator.TargetTypes;
 import org.lflang.scoping.LFGlobalScopeProvider;
+import org.lflang.target.Target;
 
 public class TSGenerator extends GeneratorBase {
 

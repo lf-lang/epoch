@@ -4,11 +4,11 @@ package org.lflang.analyses.uclid;
 import java.util.List;
 
 import org.lflang.Mock;
-import org.lflang.Target;
 import org.lflang.generator.GeneratorBase;
 import org.lflang.generator.LFGeneratorContext;
 import org.lflang.generator.TargetTypes;
 import org.lflang.lf.Attribute;
+import org.lflang.target.Target;
 
 public class UclidGenerator extends GeneratorBase {
 
