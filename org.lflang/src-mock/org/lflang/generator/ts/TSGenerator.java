@@ -10,6 +10,10 @@ import org.lflang.target.Target;
 
 public class TSGenerator extends GeneratorBase {
 
+    public TSGenerator(LFGeneratorContext context) {
+        super(context);
+    }
+  
     public TSGenerator(LFGeneratorContext context,
             LFGlobalScopeProvider scopeProvider) {
         super(context);
