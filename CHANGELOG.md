@@ -1,5 +1,16 @@
 # Changelog
  
+## [v0.6.0](https://github.com/lf-lang/epoch/tree/v0.6.0) (2024-01-26)
+
+**Highlights**
+
+This release features an updated compiler core but includes no major changes to the IDE itself.
+
+- Allow building against lingua-franca fork [\#53](https://github.com/lf-lang/epoch/pull/53) (@lhstrh)
+- Introduce spotbugs and JCIP annotations dependency [\#54](https://github.com/lf-lang/epoch/pull/54) (@a-sr)
+- Adjusted implementation of MessageReporter and new dependency on `com.google.gson` [\#55](https://github.com/lf-lang/epoch/pull/55) (@lhstrh)
+
+ 
 ## [v0.5.1](https://github.com/lf-lang/epoch/tree/v0.5.1) (2023-09-12)
 
 **Highlights**
