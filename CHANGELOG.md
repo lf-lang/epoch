@@ -1,5 +1,13 @@
 # Changelog
  
+## [v0.6.1](https://github.com/lf-lang/epoch/tree/v0.6.1) (2024-02-18)
+
+**Highlights**
+
+This patch release includes a bugfix in the Lingua Franca compiler for the handling of environment variables to access files in the source tree.
+
+
+ 
 ## [v0.6.0](https://github.com/lf-lang/epoch/tree/v0.6.0) (2024-01-26)
 
 **Highlights**
