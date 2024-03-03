@@ -46,9 +46,10 @@ reactor MessageGenerator(prefix: string = "") {
         // Add one for the null terminator.
         int length = snprintf(NULL, 0, "%s %d", self->prefix, self->count) + 1;
         // Dynamically allocate memory for the output.
-        SET_NEW_ARRAY(message, length);
+        char* value = (char*)malloc(length);
         // Populate the output string and increment the count.
-        snprintf(message->value, length, "%s %d", self->prefix, self->count++);
+        snprintf(value, length, "%s %d", self->prefix, self->count++);
+        lf_set_array(message, value, length);
 
         tag_t tag = lf_tag();
         lf_print("At (elapsed) logical tag " PRINTF_TAG ", source sends message: %s",
