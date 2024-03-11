@@ -1,5 +1,11 @@
 # Changelog
  
+## [v0.7.0](https://github.com/lf-lang/epoch/tree/v0.7.0) (2024-03-11)
+
+To change this text, edit notes/epoch/v0.7.0.md in the release-notes repo.
+
+
+ 
 ## [v0.6.0](https://github.com/lf-lang/epoch/tree/v0.6.0) (2024-01-26)
 
 **Highlights**
