@@ -31,7 +31,7 @@ public class LFProjectTemplateProvider implements IProjectTemplateProvider {
     @Override
     public AbstractProjectTemplate[] getProjectTemplates() {
         return new AbstractProjectTemplate[] { new DefaultProject(),
-                new FederatedProject(), new HelloWorldProject(),
+                new HelloWorldProject(),
                 new InteractiveProject(), new ParallelProject(),
                 new PipelineProject(), new ReflexGameProject(),
                 new WebServerProject() };
@@ -91,22 +91,6 @@ final class PipelineProject extends LFProjectTemplate {
     public void generateProjects(IProjectGenerator generator) {
         var proj = setup(List.of("src"));
         var fileName = "src/Pipeline.lf";
-        this.addFile(proj, fileName, readFromFile("c", fileName));
-        generator.generate(proj);
-    }
-}
-
-@ProjectTemplate(
-        label = "Federated",
-        icon = "project_template.png",
-        description = "<p><b>Federated</b></p>" +
-                "<p>A federated \"Hello World\" program.</p>")
-final class FederatedProject extends LFProjectTemplate {
-
-    @Override
-    public void generateProjects(IProjectGenerator generator) {
-        var proj = setup(List.of("src"));
-        var fileName = "src/FederatedHelloWorld.lf";
         this.addFile(proj, fileName, readFromFile("c", fileName));
         generator.generate(proj);
     }

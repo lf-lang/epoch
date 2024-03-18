@@ -69,7 +69,6 @@ public class TemplateCompilationTest {
     
     static String[] TEMPLATES = {
         "/org/lflang/ui/wizard/templates/c/src/HelloWorld.lf",
-        "/org/lflang/ui/wizard/templates/c/src/FederatedHelloWorld.lf",
         "/org/lflang/ui/wizard/templates/c/src/Parallel.lf",
         "/org/lflang/ui/wizard/templates/c/src/Pipeline.lf",
         "/org/lflang/ui/wizard/templates/c/src/Main.lf",
