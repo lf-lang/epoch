@@ -97,22 +97,6 @@ final class PipelineProject extends LFProjectTemplate {
 }
 
 @ProjectTemplate(
-        label = "Federated",
-        icon = "project_template.png",
-        description = "<p><b>Federated</b></p>" +
-                "<p>A federated \"Hello World\" program.</p>")
-final class FederatedProject extends LFProjectTemplate {
-
-    @Override
-    public void generateProjects(IProjectGenerator generator) {
-        var proj = setup(List.of("src"));
-        var fileName = "src/FederatedHelloWorld.lf";
-        this.addFile(proj, fileName, readFromFile("c", fileName));
-        generator.generate(proj);
-    }
-}
-
-@ProjectTemplate(
         label = "Parallel",
         icon = "project_template.png",
         description = "<p><b>Parallel</b></p>" +
