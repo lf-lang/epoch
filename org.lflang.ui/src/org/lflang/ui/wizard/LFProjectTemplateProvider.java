@@ -31,7 +31,7 @@ public class LFProjectTemplateProvider implements IProjectTemplateProvider {
     @Override
     public AbstractProjectTemplate[] getProjectTemplates() {
         return new AbstractProjectTemplate[] { new DefaultProject(),
-                new FederatedProject(), new HelloWorldProject(),
+                new HelloWorldProject(),
                 new InteractiveProject(), new ParallelProject(),
                 new PipelineProject(), new ReflexGameProject(),
                 new WebServerProject() };
