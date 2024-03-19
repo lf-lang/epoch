@@ -1,4 +1,6 @@
-target Python
+target Python {
+    build-type: Release
+}
 
 /** Print "Hello World!" in Python. */
 main reactor {
