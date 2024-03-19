@@ -9,9 +9,6 @@ target C {
     timeout: 2 sec,
     workers: 1  // Change to 4 to see speed up.
 }
-preamble {=
-    #include <time.h>
-=}
 
 reactor Source {
     timer t(0, 200 msec)
@@ -29,9 +26,7 @@ reactor TakeTime {
     output out: int
 
     reaction(in) -> out {=
-        struct timespec sleep_time = {(time_t) 0, (long)200000000};
-        struct timespec remaining_time;
-        nanosleep(&sleep_time, &remaining_time);
+        lf_sleep(MSEC(200));
         int offset = 0;
         for (int i = 0; i < 100000000; i++) {
             offset++;
