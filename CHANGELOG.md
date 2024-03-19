@@ -1,5 +1,15 @@
 # Changelog
  
+## [v0.7.0](https://github.com/lf-lang/epoch/tree/v0.7.0) (2024-03-19)
+
+To change this text, edit notes/epoch/v0.7.0.md in the release-notes repo.
+
+**🔧 Fixes**
+
+- Removal of failing federated template [\#62](https://github.com/lf-lang/epoch/pull/62) (@edwardalee)
+
+
+ 
 ## [v0.6.0](https://github.com/lf-lang/epoch/tree/v0.6.0) (2024-01-26)
 
 **Highlights**
