@@ -165,7 +165,7 @@
         name="org.eclipse.tm.terminal.feature.feature.group"/>
     <requirement
         name="org.eclipse.xtext.sdk.feature.group"
-        versionRange="2.31.0"/>
+        versionRange="2.34.0"/>
     <requirement
         name="org.eclipse.m2e.feature.feature.group"/>
     <requirement
@@ -285,10 +285,10 @@
             versionRange="27.0.0"/>
         <requirement
             name="org.eclipse.xtext.runtime.feature.group"
-            versionRange="2.33.0"/>
+            versionRange="2.34.0"/>
         <requirement
             name="org.eclipse.xtext.sdk.feature.group"
-            versionRange="2.33.0"/>
+            versionRange="2.34.0"/>
         <requirement
             name="org.eclipse.platform.source.feature.group"/>
         <requirement
@@ -347,11 +347,11 @@
           <repository
               url="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/release/4.30.0"/>
           <repository
-              url="https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.33.0/"/>
+              url="https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.34.0/"/>
           <repository
               url="http://download.eclipse.org/elk/updates/releases/0.8.1/"/>
           <repository
-              url="https://kieler.github.io/KLighD/v2.3.0/"/>
+              url="https://kieler.github.io/KLighD/v3.0.1/"/>
           <repository
               url="https://github.com/fabioz/Pydev/releases/download/pydev_9_0_1/"/>
           <repository
@@ -437,10 +437,10 @@
             name="edu.umd.cs.piccolo"/>
         <requirement
             name="org.eclipse.xtext.runtime.feature.group"
-            versionRange="2.33.0"/>
+            versionRange="2.34.0"/>
         <requirement
             name="org.eclipse.xtext.sdk.feature.group"
-            versionRange="2.33.0"/>
+            versionRange="2.34.0"/>
         <requirement
             name="org.eclipse.platform.source.feature.group"/>
         <requirement
@@ -490,11 +490,11 @@
           <repository
               url="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/release/4.30.0"/>
           <repository
-              url="https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.33.0/"/>
+              url="https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.34.0/"/>
           <repository
-              url="http://download.eclipse.org/elk/updates/releases/0.8.1/"/>
+              url="http://download.eclipse.org/elk/updates/releases/0.9.1/"/>
           <repository
-              url="https://kieler.github.io/KLighD/v2.3.0/"/>
+              url="https://kieler.github.io/KLighD/v3.0.1/"/>
           <repository
               url="https://github.com/fabioz/Pydev/releases/download/pydev_9_0_1/"/>
           <repository
@@ -748,11 +748,11 @@
       <requirement
           name="org.eclipse.emf.ecoretools.design.feature.group"/>
       <repository
-          url="https://download.eclipse.org/elk/updates/nightly/"/>
+          url="https://download.eclipse.org/elk/updates/test/"/>
       <repository
           url="https://download.eclipse.org/mylyn/releases/3.25/"/>
       <repository
-          url="https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.33.0/"/>
+          url="https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.34.0/"/>
     </setupTask>
   </stream>
   <logicalProjectContainer
