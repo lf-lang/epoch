@@ -1,5 +1,6 @@
 // Other options: Python, Cpp, TypeScript, Rust.
 target C
 
-main reactor {  // Import and/or declare reactor classes.
+// Import and/or declare reactor classes.
+main reactor {
 }
