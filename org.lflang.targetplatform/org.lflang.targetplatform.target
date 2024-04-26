@@ -29,6 +29,12 @@
       <repository location="https://download.eclipse.org/releases/2024-03"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+      <!-- Required for JUnit4 Tests to be able to run -->
+      <!-- Remove when updating to JUnit5 or another solution is found.-->
+      <unit id="javax.annotation" version="0.0.0"/>
+      <repository location="https://download.eclipse.org/releases/2023-06"/>
+    </location>
+    <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
       <unit id="org.eclipse.xtext.runtime.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.xtext.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.xtext.ui.feature.group" version="0.0.0"/>
