@@ -31,5 +31,5 @@ jobs:
         with:
           python-version: '3.10'
       - name: Run Eclipse tests
-        run: mvn -B -U -P test integration-test
+        run: mvn -X -B -U -P test integration-test
         shell: bash
