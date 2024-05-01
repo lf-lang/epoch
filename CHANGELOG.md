@@ -1,5 +1,25 @@
 # Changelog
  
+## [v0.7.0](https://github.com/lf-lang/epoch/tree/v0.7.0) (2024-05-01)
+
+**Highlights**
+
+This release includes an updated Lingua Franca compiler and updates of several dependencies.
+
+**🔧 Fixes**
+
+- Removal of failing federated template [\#62](https://github.com/lf-lang/epoch/pull/62) (@edwardalee)
+
+**🚧 Maintenance and Refactoring**
+
+- Proper formatting of templates [\#67](https://github.com/lf-lang/epoch/pull/67) (@lhstrh)
+
+**⬆️ Updated Dependencies**
+
+- Update the target platform to 2024-03, Xtext 2.34, Klighd 3.0.1, and ELK 0.9.1 [\#65](https://github.com/lf-lang/epoch/pull/65) (@soerendomroes)
+
+
+ 
 ## [v0.6.0](https://github.com/lf-lang/epoch/tree/v0.6.0) (2024-01-26)
 
 **Highlights**
