@@ -351,7 +351,7 @@
           <repository
               url="http://download.eclipse.org/elk/updates/releases/0.9.1/"/>
           <repository
-              url="https://kieler.github.io/KLighD/v3.0.1/"/>
+              url="https://kieler.github.io/KLighD/v3.0.2/"/>
           <repository
               url="https://github.com/fabioz/Pydev/releases/download/pydev_9_0_1/"/>
           <repository
