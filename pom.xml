@@ -16,7 +16,7 @@
     <properties>
         <!-- Version Properties -->
         <!-- Sync with build.gradle -->
-        <commonsCliVersion>1.4</commonsCliVersion>
+        <commonsTextVersion>1.12.0</commonsTextVersion>
         <!-- Note that this version is tied to our version of Gradle -->
         <kotlinVersion>1.6.21</kotlinVersion>
 
