@@ -1,5 +1,14 @@
 # Changelog
  
+## [v0.8.0](https://github.com/lf-lang/epoch/tree/v0.8.0) (2024-07-01)
+
+To change this text, edit notes/epoch/v0.8.0.md in the release-notes repo.
+
+- Dependency on commons-text [\#74](https://github.com/lf-lang/epoch/pull/74) (@lhstrh)
+- Fix apache.commons.text dependency registration [\#75](https://github.com/lf-lang/epoch/pull/75) (@a-sr)
+- Code adjustment for pre-build-cmd branch [\#76](https://github.com/lf-lang/epoch/pull/76) (@a-sr)
+
+ 
 ## [v0.7.2](https://github.com/lf-lang/epoch/tree/v0.7.2) (2024-05-20)
 
 **Highlights**
