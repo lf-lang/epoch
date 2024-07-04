@@ -339,6 +339,8 @@
         <requirement
             name="org.lflang.epoch.mirror.jcip"/>
         <requirement
+            name="org.lflang.epoch.mirror.jinja"/>
+        <requirement
             name="com.github.spotbugs.plugin.eclipse.feature.group"/>
         <repositoryList
             name="DefaultRepositories">
