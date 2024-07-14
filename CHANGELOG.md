@@ -1,5 +1,13 @@
 # Changelog
  
+## [v0.8.1](https://github.com/lf-lang/epoch/tree/v0.8.1) (2024-07-14)
+
+**Highlights**
+
+This patch release includes several minor bugfixes and enhancements, improving Docker support for the C++ target and providing a more complete implementation of watchdogs.
+
+
+ 
 ## [v0.8.0](https://github.com/lf-lang/epoch/tree/v0.8.0) (2024-07-02)
 
 **Highlights**
