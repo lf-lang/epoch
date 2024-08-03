@@ -1,5 +1,13 @@
 # Changelog
  
+## [v0.8.2](https://github.com/lf-lang/epoch/tree/v0.8.2) (2024-08-02)
+
+**Highlights**
+
+This patch release includes minor bugfixes and several enhancements of our Docker support. It also adds custom serialization for the Python target and support for the use of target code expressions to specify time values in C++.
+
+
+ 
 ## [v0.8.1](https://github.com/lf-lang/epoch/tree/v0.8.1) (2024-07-14)
 
 **Highlights**
