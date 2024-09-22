@@ -1,3 +1,6 @@
+> [!WARNING]  
+> Epoch is no longer actively maintained and its code repository has been archived.
+
 # Epoch IDE for Lingua Franca
 
 Epoch is an Eclipse-based Integrated Development Environment (IDE) for Lingua Franca.
