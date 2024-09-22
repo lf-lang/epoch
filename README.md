@@ -1,6 +1,9 @@
 > [!WARNING]  
 > Epoch is no longer actively maintained and its code repository has been archived.
 
+> [!NOTE]
+> If you are looking for an IDE for Lingua Franca, check out the [Lingua Franca VS Code extension](https://github.com/lf-lang/vscode-lingua-franca).
+
 # Epoch IDE for Lingua Franca
 
 Epoch is an Eclipse-based Integrated Development Environment (IDE) for Lingua Franca.
